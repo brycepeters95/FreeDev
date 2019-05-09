@@ -64,11 +64,10 @@ router.post("/register", function(req, res) {
       if (err) throw err;
       console.log(user);
     });
-    
 
     req.flash("success_msg", "You are registered and can now login");
     //after registering
-    res.redirect("/users/login");
+    res.redirect("/users/index");
   }
 });
 //matches username
