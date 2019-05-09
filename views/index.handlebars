@@ -1,2 +1,20 @@
-<h2 class="page-header">Dashboard</h2>
-<p>Welcome to your dashboard</p>
+<h2 class="page-header">Developer Showcase</h2>
+<p>The Developers</p>
+<section class="get">
+    <a href="/get-data">load users</a>
+    <div>
+        {{# each items}}
+        <article class="user">
+            <div>Name: {{this.name}}</div>
+            <div>Email: {{this.email}}</div>
+            <a href>UserSite: {{this.userUrl}}</a>
+            <div> Language 1: {{this.language1}}</div>
+            <div> Language 2: {{this.language2}}</div>
+            <div> Language 3: {{this.language3}}</div>
+            <div> Project 1: {{this.project1}}</div>
+            <div> Project 2: {{this.project2}}</div>
+            <div> Project 3: {{this.project3}}</div>
+        </article>
+
+    </div>
+</section>

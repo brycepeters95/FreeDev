@@ -18,8 +18,28 @@ var UserSchema = new Schema({
   name: {
     type: String,
     required: true
+  },
+  userUrl: {
+    type: String
+  },
+  language1: {
+    type: String
+  },
+  language2: {
+    type: String
+  },
+  language3: {
+    type: String
+  },
+  project1: {
+    type: String
+  },
+  project2: {
+    type: String
+  },
+  project3: {
+    type: String
   }
-  //need array for languages and projects also user url
 });
 
 var User = (module.exports = mongoose.model("User", UserSchema));

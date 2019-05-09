@@ -22,6 +22,13 @@ router.post("/register", function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
   var password2 = req.body.password2;
+  var userUrl = req.body.userUrl;
+  var language1 = req.body.language1;
+  var language2 = req.body.language2;
+  var language3 = req.body.language3;
+  var project1 = req.body.project1;
+  var project2 = req.body.project2;
+  var project3 = req.body.project3;
 
   req.checkBody("name", "name is required").notEmpty();
   req.checkBody("email", "name is required").notEmpty();
@@ -43,19 +50,24 @@ router.post("/register", function(req, res) {
       name: name,
       email: email,
       username: username,
-      password: password
-      //languages: languages,
-      // projects: projects,
-      // userUrl: userUrl
+      password: password,
+      userUrl: userUrl,
+      language1: language1,
+      language2: language2,
+      language3: language3,
+      project1: project1,
+      project2: project2,
+      project3: project3
     });
 
     User.createUser(newUser, function(err, user) {
       if (err) throw err;
       console.log(user);
     });
+    
 
     req.flash("success_msg", "You are registered and can now login");
-
+    //after registering
     res.redirect("/users/login");
   }
 });
