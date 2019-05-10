@@ -1,2 +1,26 @@
 <h2 class="page-header">Developer Showcase</h2>
 <p>The Developers</p>
+
+<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+    {{#each user}}
+    <div class="col-md-3 col-sm-6">
+        <div class="thumbnail">
+
+            <div class="caption">
+                <h4>
+                    {{ user.name }}
+                    {{ user.email }}
+                    {{ user.userUrl }}
+                    {{ user.language1 }}
+                    {{ user.language2 }}
+                    {{ user.language3 }}
+                    {{/each}}
+                </h4>
+            </div>
+            <p>
+
+            </p>
+        </div>
+    </div>
+
+</div>

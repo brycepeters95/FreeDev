@@ -64,11 +64,21 @@ router.post("/register", function(req, res) {
       if (err) throw err;
       console.log(user);
     });
-    //work pls
+    //index- show all users
+    router.get("/", function(req, res) {
+      // Get all users info from DB
+      User.find({}, function(err, allUsers) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.render("/index", { user: allUsers });
+        }
+      });
+    });
 
     req.flash("success_msg", "You are registered and can now login");
     //after registering
-    res.redirect("/users/index");
+    res.redirect("/users/login");
   }
 });
 //matches username
